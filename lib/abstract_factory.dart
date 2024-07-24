@@ -220,8 +220,20 @@ class AsusFactory implements DeviceFactory{
   
 }
 
+class CompanyFactory{
+  DeviceFactory? getCompany(String company){
+    if(company == 'acer'){
+      return AcerFactory();
+    }
+    if(company == 'asus'){
+      return AsusFactory();
+    }
+    return null;
+  }
+}
+
 void main(){
-  DeviceFactory acerFactory = AcerFactory();
+  /*DeviceFactory acerFactory = AcerFactory();
   Laptop acerLaptop = acerFactory.createLaptop();
   Smartphone acerSmartphone = acerFactory.createSmartphone();
   acerLaptop.laptop();
@@ -231,5 +243,5 @@ void main(){
   Laptop asusLaptop = asusFactory.createLaptop();
   Smartphone asusSmartphone = asusFactory.createSmartphone();
   asusLaptop.laptop();
-  asusSmartphone.smartphone();
+  asusSmartphone.smartphone();*/
 }

@@ -39,10 +39,27 @@ class SmartphoneCreator extends DeviceCreator{
   }
 }
 
+class DeviceFactory{
+  DeviceCreator? selectFactory(String factoryType){
+    if(factoryType == 'laptop'){
+      return LaptopCreator();
+    }
+    if(factoryType == 'smartphone'){
+      return SmartphoneCreator();
+    }
+    return null;
+  }
+}
+
 void main(){
-  DeviceCreator laptopCreator = LaptopCreator();
+  /*DeviceCreator laptopCreator = LaptopCreator();
   laptopCreator.factoryDevice();
 
   DeviceCreator smartphoneCreator = SmartphoneCreator();
-  smartphoneCreator.factoryDevice();
+  smartphoneCreator.factoryDevice();*/
+
+  DeviceFactory deviceFactory = DeviceFactory();
+  DeviceCreator? deviceCreator = deviceFactory.selectFactory('laptop');
+
+  deviceCreator?.factoryDevice();
 }

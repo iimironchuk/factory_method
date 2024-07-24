@@ -3,22 +3,23 @@ abstract class Prototype<T>{
 }
 
 class Employee implements Prototype<Employee>{
-  late String name;
-  late String position;
-  late double salary;
-  late int age; 
-  late String location;
+  final String? name;
+  final String? position;
+  final double? salary;
+  final int? age; 
+  final String? location;
 
   Employee({required this.name, required this.position, required this.salary, required this.age, required this.location});
 
   @override
-  Employee clone() {
+  Employee clone({String? name, String? position, double? salary, int? age, String? location}) {
     return Employee(
-      name: name, 
-      position: position, 
-      salary: salary, 
-      age: age, 
-      location: location);
+      name: name ?? this.name, 
+      position: position ?? this.position, 
+      salary: salary ?? this.salary, 
+      age: age ?? this.age, 
+      location: location ?? this.location,
+    );
   }
 
   @override
@@ -36,13 +37,12 @@ void main() {
     location: 'Lviv',
   );
 
-  Employee clonedEmployee = originalEmployee.clone();
+
+  Employee clonedEmployee = originalEmployee.clone(name: 'Alice', position: 'Designer', salary: 500, age: 22, location: 'Kyiv');
+  Employee clonedEmployee2 = originalEmployee.clone();
 
   print(originalEmployee);
   print(clonedEmployee);
+  print(clonedEmployee2);
 
-  clonedEmployee.name = 'Alice';
-  clonedEmployee.position = 'designer';
-
-  print(clonedEmployee);
 }
