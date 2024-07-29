@@ -244,4 +244,12 @@ void main(){
   Smartphone asusSmartphone = asusFactory.createSmartphone();
   asusLaptop.laptop();
   asusSmartphone.smartphone();*/
+
+  CompanyFactory companyFactory = CompanyFactory();
+  DeviceFactory? acerFactory = companyFactory.getCompany('acer');
+
+  Laptop acerLaptop = acerFactory!.createLaptop();
+  Smartphone acerSmartphone = acerFactory.createSmartphone();
+  acerLaptop.laptop();
+  acerSmartphone.smartphone();
 }
