@@ -25,7 +25,7 @@ abstract class Notification{
 }
 
 class InfoNotification extends Notification{
-  InfoNotification(Notifier notifier) : super(notifier);
+  InfoNotification(super.notifier);
 
   @override
   void notify(String message) {
@@ -35,7 +35,7 @@ class InfoNotification extends Notification{
 }
 
 class ErrorNotification extends Notification{
-  ErrorNotification(Notifier notifier) : super(notifier);
+  ErrorNotification(super.notifier);
 
   @override
   void notify(String message) {

@@ -22,4 +22,6 @@ void main(){
   singleton2.doSmthWithData();
 
   print(singleton1==singleton2);
+
+  
 }

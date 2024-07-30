@@ -72,13 +72,6 @@ void main() {
   Directory directory2 = Directory('directory2');
   Directory directory3 = Directory('directory3');
 
-  Client client = Client(directory3);
+  directory3.add(file3);
 
-  client.addEntity(directory1, file1);
-  client.addEntity(directory1, file2);
-  client.addEntity(directory2, file3);
-  client.addEntity(directory3, directory1);
-  client.addEntity(directory3, directory2);
-
-  client.printStructure();
 }
