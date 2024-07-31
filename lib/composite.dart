@@ -73,5 +73,11 @@ void main() {
   Directory directory3 = Directory('directory3');
 
   directory3.add(file3);
+  directory3.add(directory1);
+  directory3.add(file2);
+  directory3.add(file1);
+  directory3.add(directory2);
+
+  directory3.description();
 
 }
