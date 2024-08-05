@@ -34,6 +34,7 @@ void main(){
   apiService.fetchData('Test query');
   apiService.fetchData('Test query');
   apiService.fetchData('Test query');
+  apiService.fetchData('New query');
 
   /*Data data1 = ProxyData(password: 'test', realData: RealData('Confidential data'));
   Data data2 = ProxyData(password: 'tet', realData: RealData('Confidential data'));

@@ -25,7 +25,7 @@ class Button{
 class ButtonFactory{
   static final Map<String, ButtonType> _buttons = {};
 
-  ButtonType getButtonByName(String name){
+  ButtonType getButton(String name){
     if(!_buttons.containsKey(name)){
       _buttons[name] = ButtonType(buttonName: name);
       print('Creating new ButtonType with image: $name');
@@ -39,9 +39,9 @@ void main(){
 
   final factory = ButtonFactory();
 
-  buttons.add(factory.getButtonByName('TextButton'));
-  buttons.add(factory.getButtonByName('ElevatedButton'));
-  buttons.add(factory.getButtonByName('IconButton'));
+  buttons.add(factory.getButton('TextButton'));
+  buttons.add(factory.getButton('ElevatedButton'));
+  buttons.add(factory.getButton('IconButton'));
 
   Random random = Random();
 
