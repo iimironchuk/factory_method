@@ -42,6 +42,7 @@ void main(){
   buttons.add(factory.getButton('TextButton'));
   buttons.add(factory.getButton('ElevatedButton'));
   buttons.add(factory.getButton('IconButton'));
+  buttons.add(factory.getButton('TextButton'));
 
   Random random = Random();
 

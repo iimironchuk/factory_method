@@ -57,5 +57,5 @@ void main(){
 
   textMessageHandler.handleMessage(message: 'Some text', type: 'text');
   textMessageHandler.handleMessage(message: 'Some image', type: 'image');
-  textMessageHandler.handleMessage(message: 'Some text', type: 'text');
+  textMessageHandler.handleMessage(message: 'Some text', type: 'voice');
 }

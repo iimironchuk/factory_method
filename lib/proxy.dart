@@ -12,37 +12,37 @@ class RealApiService implements ApiService{
 
 class ProxyApiService implements ApiService{
   final RealApiService realApiService;
-  final Map<String, String> cashe = {};
+  final Map<String, String> cache = {};
 
   ProxyApiService(this.realApiService);
 
   @override
   String fetchData(String query) {
-    if(!cashe.containsKey(query)){
-      cashe[query] = realApiService.fetchData(query);
+    if(!cache.containsKey(query)){
+      cache[query] = realApiService.fetchData(query);
     }else{
       print('Returning data from cashe: $query');
     }
-    return cashe[query]!;
+    return cache[query]!;
   }
   
 }
 
 void main(){
-  ApiService apiService = ProxyApiService(RealApiService());
+  /*ApiService apiService = ProxyApiService(RealApiService());
 
   apiService.fetchData('Test query');
   apiService.fetchData('Test query');
   apiService.fetchData('Test query');
-  apiService.fetchData('New query');
+  apiService.fetchData('New query');*/
 
-  /*Data data1 = ProxyData(password: 'test', realData: RealData('Confidential data'));
+  Data data1 = ProxyData(password: 'test', realData: RealData('Confidential data'));
   Data data2 = ProxyData(password: 'tet', realData: RealData('Confidential data'));
   data1.operation();
-  data2.operation();*/
+  data2.operation();
 } 
 
-/*abstract class Data{
+abstract class Data{
   void operation();
 }
 
@@ -76,4 +76,4 @@ class ProxyData implements Data{
     return password == 'test';
   }
   
-}*/
+}
